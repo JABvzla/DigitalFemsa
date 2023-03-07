@@ -8,6 +8,11 @@
     "mobile:ios": "npm run --prefix ./infrastructure/mobile ios",
     "mobile:start": "npm run --prefix ./infrastructure/mobile start",
     "test": "npm run --prefix ./infrastructure/mobile test",
+    "test:watch": "npm run --prefix ./infrastructure/mobile test:watch",
     "mobile:lint": "npm run --prefix ./infrastructure/mobile lint"
+  },
+  "devDependencies": {
+    "@types/jest": "^26.0.23",
+    "typescript": "^4.8.3"
   }
 }
