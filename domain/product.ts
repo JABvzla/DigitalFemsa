@@ -4,7 +4,7 @@ export interface Product {
   id: Id
   createdAt: Date
   name: string
-  imagen: Image
-  isRedemption: boolean
+  image: Image
+  isRedeemed: boolean
   points: Point
 }
