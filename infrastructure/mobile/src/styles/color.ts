@@ -1,7 +1,7 @@
 const colors = {
   primary: '#334FFA',
   white: '#FFF',
-  white100: '#CFD6FF',
+  white100: '#F8F8F8',
   white200: '#9B9898',
   black: '#000',
 };
