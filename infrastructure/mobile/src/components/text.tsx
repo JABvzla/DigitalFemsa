@@ -5,7 +5,7 @@ const fontSize = {
   sm: 12,
   m: 14,
   l: 16,
-  xl: 20,
+  xl: 24,
   xxl: 32,
 };
 const fontWeight = {

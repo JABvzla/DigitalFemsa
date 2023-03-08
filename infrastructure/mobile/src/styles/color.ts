@@ -6,6 +6,7 @@ const colors = {
   black: '#000',
   green: '#00B833',
   red: '#F00',
+  purple: '#CFD6FF',
 };
 
 export type Color = keyof typeof colors;
