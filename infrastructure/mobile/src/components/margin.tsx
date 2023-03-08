@@ -7,4 +7,5 @@ interface MarginProps {
 
 export const Margin = styled.View<MarginProps>`
   margin-top: ${props => space(props.space)};
+  margin-right: ${props => space(props.space)};
 `;

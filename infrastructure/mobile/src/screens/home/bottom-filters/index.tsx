@@ -1,15 +1,24 @@
 import React from 'react';
-import { Card, Text } from '../../../components';
+import { Button, Margin } from '../../../components';
+import { ButtonWrapper } from './styled';
 
+const withFilter = true;
 export const BottomFilters = () => {
   return (
     <>
-      <Card radius="xl" backround="primary">
-        <Text>Ganados</Text>
-      </Card>
-      <Card radius="xl" backround="primary">
-        <Text>Canjeados</Text>
-      </Card>
+      <Margin space="m" />
+      <ButtonWrapper>
+        {withFilter && (
+          <>
+            <Button onPress={() => {}} labelSize="sm" label="Ganados" />
+            <Margin space="s" />
+            <Button onPress={() => {}} labelSize="sm" label="Canjeados" />
+          </>
+        )}
+        {!withFilter && (
+          <Button onPress={() => {}} labelSize="l" label="Todos" />
+        )}
+      </ButtonWrapper>
     </>
   );
 };

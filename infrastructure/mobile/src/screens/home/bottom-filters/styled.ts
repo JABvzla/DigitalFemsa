@@ -1,5 +1,6 @@
 import styled from 'styled-components/native';
 
-export const BottomFilters = styled.View`
-  justify-content: center;
+export const ButtonWrapper = styled.View`
+  flex-direction: row;
+  width: 100%;
 `;
