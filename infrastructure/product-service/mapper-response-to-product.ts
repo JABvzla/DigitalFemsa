@@ -1,5 +1,5 @@
-import { Product } from "../../domain/product";
-import { ProductsResponse } from "./product-response";
+import { Product } from "../../domain/product"
+import { ProductsResponse } from "./product-response"
 
 export const mapperResponseToProduct = (productResponse: ProductsResponse): Product => ({
   id: productResponse.id,

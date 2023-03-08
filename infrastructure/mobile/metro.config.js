@@ -1,13 +1,15 @@
 const path = require('path');
 
 const watchFolders = [
-  path.resolve(__dirname + '/../application'),
-  path.resolve(__dirname + '/../domain'),
+  path.resolve(`${__dirname}/../../infrastructure`),
+  path.resolve(`${__dirname}/../../application`),
+  path.resolve(`${__dirname}/../../domain`),
 ];
 
 const extraNodeModules = {
-  application: path.resolve(__dirname + '/../application'),
-  domain: path.resolve(__dirname + '/../domain'),
+  infrastructure: path.resolve(`${__dirname}/../../infrastructure`),
+  application: path.resolve(`${__dirname}/../../application`),
+  domain: path.resolve(`${__dirname}/../../domain`),
 };
 
 module.exports = {

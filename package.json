@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "mobile:install-mobile": "npm install --prefix ./infrastructure/mobile",
+    "mobile:install": "npm install --prefix ./infrastructure/mobile",
     "mobile:android": "npm run --prefix ./infrastructure/mobile android",
     "mobile:ios": "npm run --prefix ./infrastructure/mobile ios",
     "mobile:start": "npm run --prefix ./infrastructure/mobile start",
