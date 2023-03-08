@@ -1,6 +1,5 @@
-import { ReactNode } from 'react';
-import { SafeAreaView, ScrollView } from 'react-native';
-import { Content } from './styled';
+import React, { ReactNode } from 'react';
+import { Content, SafeArea } from './styled';
 
 interface LayoutProps {
   children: ReactNode;
@@ -8,10 +7,8 @@ interface LayoutProps {
 
 export const Layout = ({ children }: LayoutProps) => {
   return (
-    <ScrollView>
-      <SafeAreaView>
-        <Content>{children}</Content>
-      </SafeAreaView>
-    </ScrollView>
+    <SafeArea>
+      <Content>{children}</Content>
+    </SafeArea>
   );
 };

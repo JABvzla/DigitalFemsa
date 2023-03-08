@@ -21,11 +21,11 @@ interface TextProps {
   size?: FontSize;
   color?: Color;
   weight?: FontWeight;
-  align?: 'center' | 'auto' | 'justify' | 'left' | 'right'
+  align?: 'center' | 'auto' | 'justify' | 'left' | 'right';
 }
 export const Text = styled.Text<TextProps>`
   font-size: ${props => fontSize[props.size || 'm']}px;
   font-weight: ${props => fontWeight[props.weight || 'm']};
   color: ${props => color(props.color || 'black')};
   text-align: ${props => props.align || 'auto'};
-`;  
+`;

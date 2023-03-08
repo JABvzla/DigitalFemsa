@@ -1,5 +1,6 @@
 import React from 'react';
 import { Card, CardTotal, Layout, Margin, Text } from '../components';
+import { ProductList } from '../components/product-list';
 
 const SectionTitle = (props: React.PropsWithChildren) => (
   <Text {...props} size="l" weight="l" color="white200" />
@@ -20,6 +21,8 @@ export const Home = () => {
       <CardTotal />
       <Margin space="s" />
       <SectionTitle>TUS MOVIMIENTOS</SectionTitle>
+      <Margin space="s" />
+      <ProductList />
       <Margin space="s" />
       <Card radius="xl" backround="primary">
         <Text>Ganados</Text>

@@ -4,6 +4,8 @@ const colors = {
   white100: '#F8F8F8',
   white200: '#9B9898',
   black: '#000',
+  green: '#00B833',
+  red: '#F00',
 };
 
 export type Color = keyof typeof colors;
