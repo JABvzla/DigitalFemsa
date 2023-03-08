@@ -6,4 +6,7 @@ const sizes = {
 };
 
 export type RadiusSize = keyof typeof sizes;
-export const radius = (size: RadiusSize) => css`border-radius ${sizes[size]}px`;
+export const radius = (size: RadiusSize) =>
+  css`
+    border-radius: ${sizes[size]}px;
+  `;
