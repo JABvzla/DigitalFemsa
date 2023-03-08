@@ -1,6 +1,6 @@
 import styled from 'styled-components/native';
-import { space } from '../../styles';
-import { Card, Text } from '..';
+import { space } from '../../../styles';
+import { Card, Text } from '../../../components/';
 
 export const Container = styled(Card).attrs({
   radius: 'xl',

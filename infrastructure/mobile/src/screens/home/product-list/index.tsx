@@ -1,6 +1,6 @@
 import React from 'react';
 import { FlatList } from 'react-native';
-import { Margin } from '../margin';
+import { Margin } from '../../../components/margin';
 import { ProductItem } from './product-item';
 import { Content } from './styled';
 

@@ -1,7 +1,6 @@
 import styled from 'styled-components/native';
-import { Card } from '../card';
-import { color, radius, space } from '../../styles';
-import { Text } from '../text';
+import { Card, Text } from '../../../components/';
+import { color, radius, space } from '../../../styles';
 
 export const Content = styled(Card).attrs({
   backround: 'white',

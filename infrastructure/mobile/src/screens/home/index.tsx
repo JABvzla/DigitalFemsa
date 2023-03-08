@@ -1,6 +1,8 @@
 import React from 'react';
-import { Card, CardTotal, Layout, Margin, Text } from '../components';
-import { ProductList } from '../components/product-list';
+import { Layout, Margin, Text } from '../../components';
+import { BottomFilters } from './bottom-filters';
+import { CardTotal } from './card-total';
+import { ProductList } from './product-list';
 
 const SectionTitle = (props: React.PropsWithChildren) => (
   <Text {...props} size="l" weight="l" color="white200" />
@@ -24,12 +26,7 @@ export const Home = () => {
       <Margin space="s" />
       <ProductList />
       <Margin space="s" />
-      <Card radius="xl" backround="primary">
-        <Text>Ganados</Text>
-      </Card>
-      <Card radius="xl" backround="primary">
-        <Text>Canjeados</Text>
-      </Card>
+      <BottomFilters />
     </Layout>
   );
 };
