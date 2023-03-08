@@ -33,7 +33,7 @@ import org.apache.tools.ant.taskdefs.condition.Os
  *   // whether to bundle JS and assets in another build variant (if configured).
  *   // See http://tools.android.com/tech-docs/new-build-system/user-guide#TOC-Build-Variants
  *   // The configuration property can be in the following formats
- *   //         'bundleIn${productFlavor}${buildType}'
+ *   //         'bundleIn${transactionFlavor}${buildType}'
  *   //         'bundleIn${buildType}'
  *   // bundleInFreeDebug: true,
  *   // bundleInPaidRelease: true,
@@ -43,7 +43,7 @@ import org.apache.tools.ant.taskdefs.condition.Os
  *   // for example: to disable dev mode in the staging build type (if configured)
  *   devDisabledInStaging: true,
  *   // The configuration property can be in the following formats
- *   //         'devDisabledIn${productFlavor}${buildType}'
+ *   //         'devDisabledIn${transactionFlavor}${buildType}'
  *   //         'devDisabledIn${buildType}'
  *
  *   // the root of your project, i.e. where "package.json" lives
@@ -223,7 +223,7 @@ android {
             signingConfig signingConfigs.debug
         }
         release {
-            // Caution! In production, you need to generate your own keystore file.
+            // Caution! In transactionion, you need to generate your own keystore file.
             // see https://reactnative.dev/docs/signed-apk-android.
             signingConfig signingConfigs.debug
             minifyEnabled enableProguardInReleaseBuilds

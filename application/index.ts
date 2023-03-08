@@ -1,4 +1,4 @@
-export { getProducts } from "./get-products"
-export { getProductsAvailable } from "./get-products-available"
-export { getProductsRedeemed } from "./get-products-redeemed"
-export { getProductsTotal } from "./get-products-total"
+export { getTransactions } from "./get-transactions"
+export { getTransactionsAvailable } from "./get-transactions-available"
+export { getTransactionsRedeemed } from "./get-transactions-redeemed"
+export { getTransactionsTotal } from "./get-transactions-total"

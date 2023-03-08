@@ -1,4 +1,4 @@
-export interface ProductsResponse {
+export interface TransactionsResponse {
   id: string
   createdAt: string
   product: string

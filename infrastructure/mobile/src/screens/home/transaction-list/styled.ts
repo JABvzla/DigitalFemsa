@@ -16,7 +16,7 @@ export const FlatList = styled.FlatList.attrs({
   padding: ${space('m')};
 `;
 
-export const ProductImage = styled.View`
+export const TransactionImage = styled.View`
   ${radius('m')};
   background-color: #ccc;
   width: 45px;
@@ -24,29 +24,29 @@ export const ProductImage = styled.View`
   margin-right: ${space('s')};
 `;
 
-export const ProductContent = styled.TouchableOpacity`
+export const TransactionContent = styled.TouchableOpacity`
   flex-direction: row;
   align-items: center;
 `;
 
-export const ProductName = styled(Text).attrs({
+export const TransactionName = styled(Text).attrs({
   size: 'm',
   weight: 'l',
 })``;
 
-export const ProductCreated = styled(Text).attrs({
+export const TransactionCreated = styled(Text).attrs({
   size: 'sm',
   weight: 'm',
 })``;
 
-export const ProductPoint = styled(Text).attrs({
+export const TransactionPoint = styled(Text).attrs({
   size: 'l',
   weight: 'm',
 })`
   margin-left: auto;
 `;
 
-export const ProductOperation = styled.Text<{ isPlus: boolean }>`
+export const TransactionOperation = styled.Text<{ isPlus: boolean }>`
   color: ${({ isPlus }) => color(isPlus ? 'green' : 'red')};
   font-weight: bold;
 `;

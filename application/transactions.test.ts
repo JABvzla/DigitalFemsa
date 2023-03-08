@@ -1,8 +1,8 @@
-import { getProducts, getProductsAvailable, getProductsRedeemed, getProductsTotal } from "."
-import { Product } from "../domain/product"
-import { ProductRepository } from "../domain/product-repository"
+import { getTransactions, getTransactionsAvailable, getTransactionsRedeemed, getTransactionsTotal } from "."
+import { Transaction } from "../domain/transaction"
+import { TransactionRepository } from "../domain/transaction-repository"
 
-const PRODUCTS_MOCK: Product[] = [
+const PRODUCTS_MOCK: Transaction[] = [
   {
     id: "1",
     createdAt: "2022-12-09T10:20:00.909Z",
@@ -37,7 +37,7 @@ const PRODUCTS_MOCK: Product[] = [
   },
 ]
 
-const productRepositoryMock: ProductRepository = {
+const transactionRepositoryMock: TransactionRepository = {
   getAll: () => Promise.resolve(PRODUCTS_MOCK),
 }
 
@@ -45,19 +45,19 @@ it("holis", () => {
   expect(true).toBe(true)
 })
 
-describe("get-products", () => {
-  it("should return all products in repository", async () => {
+describe("get-transactions", () => {
+  it("should return all transactions in repository", async () => {
     // Arrange
     const expectData = PRODUCTS_MOCK
     // Action
-    const result = await getProducts(productRepositoryMock)
+    const result = await getTransactions(transactionRepositoryMock)
     // // Asserts
     expect(expectData).toEqual(result)
   })
 })
 
-describe("get-products-availables", () => {
-  it("should return products availables with repository", async () => {
+describe("get-transactions-availables", () => {
+  it("should return transactions availables with repository", async () => {
     // Arrange
     const expectData = [
       {
@@ -78,14 +78,14 @@ describe("get-products-availables", () => {
       },
     ]
     // Action
-    const result = await getProductsAvailable(productRepositoryMock)
+    const result = await getTransactionsAvailable(transactionRepositoryMock)
     // Asserts
     expect(expectData).toEqual(result)
   })
 })
 
-describe("get-products-redeemed", () => {
-  it("should return products redeemed in repository", async () => {
+describe("get-transactions-redeemed", () => {
+  it("should return transactions redeemed in repository", async () => {
     // Arrange
     const expectData = [
       {
@@ -106,25 +106,25 @@ describe("get-products-redeemed", () => {
       },
     ]
     // Action
-    const result = await getProductsRedeemed(productRepositoryMock)
+    const result = await getTransactionsRedeemed(transactionRepositoryMock)
     // Asserts
     expect(expectData).toEqual(result)
   })
 })
 
-describe("get-products-total", () => {
+describe("get-transactions-total", () => {
   it("should return total add and substract of point ", async () => {
     // Arrange
     const expectResult = 1000
     // Action
-    const result = await getProductsTotal(productRepositoryMock)
+    const result = await getTransactionsTotal(transactionRepositoryMock)
     // Asserts
     expect(expectResult).toEqual(result)
   })
 
   it("total should never be less than 0 ", async () => {
     // Arrange
-    const negativeResultRespositoryMock: ProductRepository = {
+    const negativeResultRespositoryMock: TransactionRepository = {
       getAll: async () => [
         {
           id: "4",
@@ -139,7 +139,7 @@ describe("get-products-total", () => {
     }
     const expectResult = 0
     // Action
-    const result = await getProductsTotal(negativeResultRespositoryMock)
+    const result = await getTransactionsTotal(negativeResultRespositoryMock)
     // Asserts
     expect(expectResult).toEqual(result)
   })

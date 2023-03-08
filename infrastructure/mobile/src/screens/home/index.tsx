@@ -2,7 +2,7 @@ import React from 'react';
 import { Layout, Margin, Text } from '../../components';
 import { BottomFilters } from './bottom-filters';
 import { CardTotal } from './card-total';
-import { ProductList } from './product-list';
+import { TransactionList } from './transaction-list';
 
 const SectionTitle = (props: React.PropsWithChildren) => (
   <Text {...props} size="l" weight="l" color="white200" />
@@ -24,7 +24,7 @@ export const Home = () => {
       <Margin space="s" />
       <SectionTitle>TUS MOVIMIENTOS</SectionTitle>
       <Margin space="s" />
-      <ProductList />
+      <TransactionList />
       <Margin space="s" />
       <BottomFilters />
     </Layout>
