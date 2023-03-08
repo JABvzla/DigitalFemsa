@@ -1,22 +1,22 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Button, Margin } from '../../../components';
 import { ButtonWrapper } from './styled';
 
-const withFilter = true;
 export const BottomFilters = () => {
+  const [withFilter, setWithFilter] = useState(true);
   return (
     <>
       <Margin space="m" />
       <ButtonWrapper>
         {withFilter && (
           <>
-            <Button onPress={() => {}} labelSize="sm" label="Ganados" />
+            <Button onPress={() => { setWithFilter(false)}} labelSize="sm" label="Ganados" />
             <Margin space="s" />
-            <Button onPress={() => {}} labelSize="sm" label="Canjeados" />
+            <Button onPress={() => { setWithFilter(false)}} labelSize="sm" label="Canjeados" />
           </>
         )}
         {!withFilter && (
-          <Button onPress={() => {}} labelSize="l" label="Todos" />
+          <Button onPress={() => { setWithFilter(true)}} labelSize="l" label="Todos" />
         )}
       </ButtonWrapper>
     </>

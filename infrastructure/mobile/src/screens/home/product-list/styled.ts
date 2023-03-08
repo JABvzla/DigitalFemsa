@@ -6,9 +6,14 @@ export const Content = styled(Card).attrs({
   backround: 'white',
   radius: 'm',
 })`
-  padding: ${space('m')};
   width: 100%;
   flex: 1;
+`;
+
+export const FlatList = styled.FlatList.attrs({
+  contentContainerStyle: { paddingBottom: 50 },
+})`
+  padding: ${space('m')};
 `;
 
 export const ProductImage = styled.View`
