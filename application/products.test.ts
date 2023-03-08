@@ -1,4 +1,4 @@
-import { getProducts, getProductsAvailables, getProductsRedeemed, getProductsTotal } from "."
+import { getProducts, getProductsAvailable, getProductsRedeemed, getProductsTotal } from "."
 import { Product } from "../domain/product"
 import { ProductRepository } from "../domain/product-repository"
 
@@ -38,22 +38,26 @@ const PRODUCTS_MOCK: Product[] = [
 ]
 
 const productRepositoryMock: ProductRepository = {
-  getAll: () => PRODUCTS_MOCK,
+  getAll: () => Promise.resolve(PRODUCTS_MOCK),
 }
 
+it("holis", () => {
+  expect(true).toBe(true)
+})
+
 describe("get-products", () => {
-  it("should return all products in repository", () => {
+  it("should return all products in repository", async () => {
     // Arrange
     const expectData = PRODUCTS_MOCK
     // Action
-    const result = getProducts(productRepositoryMock)
-    // Asserts
+    const result = await getProducts(productRepositoryMock)
+    // // Asserts
     expect(expectData).toEqual(result)
   })
 })
 
 describe("get-products-availables", () => {
-  it("should return products availables with repository", () => {
+  it("should return products availables with repository", async () => {
     // Arrange
     const expectData = [
       {
@@ -74,14 +78,14 @@ describe("get-products-availables", () => {
       },
     ]
     // Action
-    const result = getProductsAvailables(productRepositoryMock)
+    const result = await getProductsAvailable(productRepositoryMock)
     // Asserts
     expect(expectData).toEqual(result)
   })
 })
 
 describe("get-products-redeemed", () => {
-  it("should return products redeemed in repository", () => {
+  it("should return products redeemed in repository", async () => {
     // Arrange
     const expectData = [
       {
@@ -102,26 +106,26 @@ describe("get-products-redeemed", () => {
       },
     ]
     // Action
-    const result = getProductsRedeemed(productRepositoryMock)
+    const result = await getProductsRedeemed(productRepositoryMock)
     // Asserts
     expect(expectData).toEqual(result)
   })
 })
 
 describe("get-products-total", () => {
-  it("should return total add and substract of point ", () => {
+  it("should return total add and substract of point ", async () => {
     // Arrange
     const expectResult = 1000
     // Action
-    const result = getProductsTotal(productRepositoryMock)
+    const result = await getProductsTotal(productRepositoryMock)
     // Asserts
     expect(expectResult).toEqual(result)
   })
 
-  it("total should never be less than 0 ", () => {
+  it("total should never be less than 0 ", async () => {
     // Arrange
     const negativeResultRespositoryMock: ProductRepository = {
-      getAll: () => [
+      getAll: async () => [
         {
           id: "4",
           createdAt: "2022-12-09T10:20:00.909Z",
@@ -135,7 +139,7 @@ describe("get-products-total", () => {
     }
     const expectResult = 0
     // Action
-    const result = getProductsTotal(negativeResultRespositoryMock)
+    const result = await getProductsTotal(negativeResultRespositoryMock)
     // Asserts
     expect(expectResult).toEqual(result)
   })

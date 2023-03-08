@@ -1,5 +1,6 @@
 import { ProductRepository } from "../domain/product-repository"
 
-export function getProductsRedeemed(productRepository: ProductRepository) {
-  return productRepository.getAll().filter(product => product.isRedeemed === true)
+export async function getProductsRedeemed(productRepository: ProductRepository) {
+  const products = await productRepository.getAll();
+  return products.filter(product => product.isRedeemed === true);
 }
