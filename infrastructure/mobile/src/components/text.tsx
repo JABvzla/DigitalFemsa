@@ -16,12 +16,12 @@ export type FontWeight = keyof typeof fontWeight;
 export type FontSize = keyof typeof fontSize;
 
 interface TextProps {
-  size: FontSize;
-  color: Color;
-  weight: FontWeight;
+  size?: FontSize;
+  color?: Color;
+  weight?: FontWeight;
 }
 export const Text = styled.Text<TextProps>`
-  font-size: ${({ size }) => fontSize[size]}px;
-  font-weight: ${({ weight }) => fontWeight[weight]};
-  color: ${props => color[props.color]}px;
+  font-size: ${props => fontSize[props.size || 'm']}px;
+  font-weight: ${props => fontWeight[props.weight || 'm']};
+  color: ${props => color(props.color || 'black')};
 `;

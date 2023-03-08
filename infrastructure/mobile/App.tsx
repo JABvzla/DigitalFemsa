@@ -1,13 +1,14 @@
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
-import { Text } from 'react-native';
-import { Card } from './src/components/card';
+import { Card, Text } from './src/components';
 
 const App = () => {
   return (
     <NavigationContainer>
-      <Card radius="M" backround="primary" />
-      <Text>hola mundo</Text>
+      <Card radius="m" backround="primary" />
+      <Text size="l" color="black">
+        hola mundo
+      </Text>
     </NavigationContainer>
   );
 };

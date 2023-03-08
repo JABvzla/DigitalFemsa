@@ -1,8 +1,8 @@
 import { css } from 'styled-components/native';
 
 const sizes = {
-  M: 10,
-  XL: 20,
+  m: 10,
+  xl: 20,
 };
 
 export type RadiusSize = keyof typeof sizes;
