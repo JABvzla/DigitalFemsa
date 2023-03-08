@@ -8,7 +8,6 @@ export const Container = styled(Card).attrs({
 })`
   padding: ${space('m')};
   padding-bottom: ${space('xl')};
-  margin-vertical: ${space('m')};
   justify-content: center;
 `;
 
