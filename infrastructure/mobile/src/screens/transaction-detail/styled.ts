@@ -1,6 +1,6 @@
 import styled from 'styled-components/native';
 import { Card } from '../../components';
-import { color, space } from '../../styles';
+import { color, radius, space } from '../../styles';
 
 export const SafeArea = styled.SafeAreaView`
   background-color: ${color('purple')};
@@ -11,10 +11,18 @@ export const Header = styled.View`
 export const Footer = styled.View`
   flex-direction: row;
 `;
+export const Image = styled.Image`
+  ${radius('xl')};
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+`;
+
 export const ShadowCard = styled(Card).attrs({
   backround: 'white',
   radius: 'xl',
 })`
+  background-color: ${color('white200')};
   overflow: visible;
   height: 250px;
   width: 100%;
