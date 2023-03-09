@@ -11,6 +11,7 @@ const AnimatedImage = { borderRadius: 20 };
 export const TransactionDetail = () => {
   const navigation = useNavigation();
   const route = useRoute<RouteProp<RootStackParams, 'Details'>>();
+  const gobackHandler = () => navigation.canGoBack() && navigation.goBack();
   const { transaction } = route.params;
   return (
     <Content>
@@ -52,7 +53,7 @@ export const TransactionDetail = () => {
 
         <Margin space="xl" />
         <Footer>
-          <Button onPress={navigation.goBack} label="Aceptar" labelSize="l" />
+          <Button onPress={gobackHandler} label="Aceptar" labelSize="l" />
         </Footer>
       </Layout>
     </Content>
