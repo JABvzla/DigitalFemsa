@@ -1,5 +1,6 @@
 import React from 'react';
 import { View } from 'react-native';
+import { Transaction } from 'root/domain/transaction';
 import {
   TransactionContent,
   TransactionCreated,
@@ -9,15 +10,24 @@ import {
   TransactionPoint,
 } from './styled';
 
-export const TransactionItem = () => (
+interface TransactionItemProps {
+  transaction: Transaction;
+}
+
+export const TransactionItem = ({
+  transaction: { product, createdAt, isRedeemed, points },
+}: TransactionItemProps) => (
   <TransactionContent>
     <TransactionImage />
     <View>
-      <TransactionName>Nombre del producto</TransactionName>
-      <TransactionCreated>26 enero, 2019</TransactionCreated>
+      <TransactionName>{product}</TransactionName>
+      <TransactionCreated>{createdAt}</TransactionCreated>
     </View>
     <TransactionPoint>
-      <TransactionOperation isPlus>+</TransactionOperation>100 {'>'}
+      <TransactionOperation isPlus={!isRedeemed}>
+        {!isRedeemed ? '+' : '-'}
+      </TransactionOperation>
+      {points} {'>'}
     </TransactionPoint>
   </TransactionContent>
 );

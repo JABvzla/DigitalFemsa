@@ -1,17 +1,19 @@
 import React from 'react';
+import { Transaction } from 'root/domain/transaction';
 import { Margin } from '../../../components/margin';
-import { TransactionItem } from './transaction-item';
 import { Content, FlatList } from './styled';
+import { TransactionItem } from './transaction-item';
 
-interface TransactionListProps {}
+interface TransactionListProps {
+  transactions: Transaction[];
+}
 
-const DATA_MOCK = [1, 2, 3, 4, 5, 6, 7];
-export const TransactionList = (_props: TransactionListProps) => {
+export const TransactionList = (props: TransactionListProps) => {
   return (
     <Content>
-      <FlatList
-        data={DATA_MOCK}
-        renderItem={TransactionItem}
+      <FlatList<Transaction>
+        data={props.transactions}
+        renderItem={({ item }) => <TransactionItem transaction={item} />}
         showsHorizontalScrollIndicator={false}
         showsVerticalScrollIndicator={false}
         ItemSeparatorComponent={() => <Margin space="s" />}

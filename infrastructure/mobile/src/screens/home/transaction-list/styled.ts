@@ -1,3 +1,4 @@
+import { FlatList as RNFlatlist } from 'react-native';
 import styled from 'styled-components/native';
 import { Card, Text } from '../../../components/';
 import { color, radius, space } from '../../../styles';
@@ -14,7 +15,7 @@ export const FlatList = styled.FlatList.attrs({
   contentContainerStyle: { paddingBottom: 50 },
 })`
   padding: ${space('m')};
-`;
+` as unknown as typeof RNFlatlist;
 
 export const TransactionImage = styled.View`
   ${radius('m')};

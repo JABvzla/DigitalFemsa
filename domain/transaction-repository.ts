@@ -1,5 +1,5 @@
 import { Transaction } from "../domain/transaction"
 
 export interface TransactionRepository{
-  getAll: () => Promise<Transaction[]>
+  getAll: () => Promise<[Transaction[], string | null]>
 }

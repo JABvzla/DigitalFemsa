@@ -1,32 +1,36 @@
 import React from 'react';
+import { StatusBar } from 'react-native';
 import { Layout, Margin, Text } from '../../components';
+import { color } from '../../styles';
 import { BottomFilters } from './bottom-filters';
 import { CardTotal } from './card-total';
+import { SectionTitle } from './section-title';
 import { TransactionList } from './transaction-list';
-
-const SectionTitle = (props: React.PropsWithChildren) => (
-  <Text {...props} size="l" weight="l" color="white200" />
-);
+import { useHome } from './useHome';
 
 export const Home = () => {
+  const { transactions } = useHome();
   return (
-    <Layout>
-      <Text size="l" weight="l">
-        Bienvenido de vuelta!
-      </Text>
-      <Text size="l" weight="sm">
-        Ruben Rodriguez
-      </Text>
-      <Margin space="s" />
-      <SectionTitle>TUS PUNTOS</SectionTitle>
-      <Margin space="s" />
-      <CardTotal />
-      <Margin space="s" />
-      <SectionTitle>TUS MOVIMIENTOS</SectionTitle>
-      <Margin space="s" />
-      <TransactionList />
-      <Margin space="s" />
-      <BottomFilters />
-    </Layout>
+    <>
+      <StatusBar backgroundColor={color('white100')} barStyle="dark-content" />
+      <Layout>
+        <Text size="l" weight="l">
+          Bienvenido de vuelta!
+        </Text>
+        <Text size="l" weight="sm">
+          Ruben Rodriguez
+        </Text>
+        <Margin space="m" />
+        <SectionTitle>TUS PUNTOS</SectionTitle>
+        <Margin space="m" />
+        <CardTotal />
+        <Margin space="m" />
+        <SectionTitle>TUS MOVIMIENTOS</SectionTitle>
+        <Margin space="m" />
+        <TransactionList transactions={transactions} />
+        <Margin space="m" />
+        <BottomFilters />
+      </Layout>
+    </>
   );
 };

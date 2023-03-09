@@ -6,9 +6,14 @@ export const Container = styled(Card).attrs({
   radius: 'xl',
   backround: 'primary',
 })`
+  margin-left: auto;
+  margin-right: auto;
+  min-width: 280px;
   padding: ${space('m')};
   padding-bottom: ${space('xl')};
   justify-content: center;
+  elevation: 10;
+  box-shadow: 0px 4px 5px #0005;
 `;
 
 export const Title = styled(Text).attrs({
