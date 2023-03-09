@@ -27,7 +27,7 @@ export const TransactionItem = ({
       <TransactionOperation isPlus={isRedeemed}>
         {isRedeemed ? '+' : '-'}{' '}
       </TransactionOperation>
-      {points} {'>'}
+      {points.toLocaleString()} {'>'}
     </TransactionPoint>
   </TransactionContent>
 );

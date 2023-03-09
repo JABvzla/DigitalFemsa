@@ -8,7 +8,7 @@ export const CardTotal = ({ total }: CardTotalProps) => {
   return (
     <Container>
       <Title>Diciembre</Title>
-      <Total>{total} pts</Total>
+      <Total>{total.toLocaleString()} pts</Total>
     </Container>
   );
 };
