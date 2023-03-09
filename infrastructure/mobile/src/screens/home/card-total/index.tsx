@@ -1,11 +1,14 @@
 import React from 'react';
 import { Container, Title, Total } from './styled';
 
-export const CardTotal = () => {
+interface CardTotalProps {
+  total: number;
+}
+export const CardTotal = ({ total }: CardTotalProps) => {
   return (
     <Container>
       <Title>Diciembre</Title>
-      <Total>10,000.00 pts</Total>
+      <Total>{total} pts</Total>
     </Container>
   );
 };

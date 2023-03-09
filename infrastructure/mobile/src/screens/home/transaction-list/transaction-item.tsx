@@ -24,8 +24,8 @@ export const TransactionItem = ({
       <TransactionCreated>{createdAt}</TransactionCreated>
     </View>
     <TransactionPoint>
-      <TransactionOperation isPlus={!isRedeemed}>
-        {!isRedeemed ? '+' : '-'}
+      <TransactionOperation isPlus={isRedeemed}>
+        {isRedeemed ? '+' : '-'}{' '}
       </TransactionOperation>
       {points} {'>'}
     </TransactionPoint>

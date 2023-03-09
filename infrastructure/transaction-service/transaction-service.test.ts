@@ -1,7 +1,10 @@
-import {transactionService} from "./transaction-service"
+import { cleanCache, transactionService } from "./transaction-service"
 import fetchMock from "jest-fetch-mock"
 
 describe("transaction-service", () => {
+  beforeEach(() => {
+    cleanCache()
+  })
   it("should respond correctly", async () => {
     // Arrange
     // Action

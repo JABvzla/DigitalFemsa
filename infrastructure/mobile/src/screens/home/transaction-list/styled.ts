@@ -42,7 +42,7 @@ export const TransactionCreated = styled(Text).attrs({
 
 export const TransactionPoint = styled(Text).attrs({
   size: 'l',
-  weight: 'm',
+  weight: 'l',
 })`
   margin-left: auto;
 `;

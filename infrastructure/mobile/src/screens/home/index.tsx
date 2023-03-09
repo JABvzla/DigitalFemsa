@@ -9,7 +9,7 @@ import { TransactionList } from './transaction-list';
 import { useHome } from './useHome';
 
 export const Home = () => {
-  const { transactions } = useHome();
+  const { transactions, total, withFilter, setFilter } = useHome();
   return (
     <>
       <StatusBar backgroundColor={color('white100')} barStyle="dark-content" />
@@ -23,13 +23,13 @@ export const Home = () => {
         <Margin space="m" />
         <SectionTitle>TUS PUNTOS</SectionTitle>
         <Margin space="m" />
-        <CardTotal />
+        <CardTotal total={total} />
         <Margin space="m" />
         <SectionTitle>TUS MOVIMIENTOS</SectionTitle>
         <Margin space="m" />
         <TransactionList transactions={transactions} />
         <Margin space="m" />
-        <BottomFilters />
+        <BottomFilters setFilters={setFilter} withFilter={withFilter} />
       </Layout>
     </>
   );

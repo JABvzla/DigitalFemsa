@@ -1,22 +1,35 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Button, Margin } from '../../../components';
+import { TransactionFilter } from '../useHome';
 import { ButtonWrapper } from './styled';
 
-export const BottomFilters = () => {
-  const [withFilter, setWithFilter] = useState(true);
+interface Props {
+  setFilters: (filter: TransactionFilter) => void;
+  withFilter: boolean;
+}
+export const BottomFilters = ({ setFilters, withFilter }: Props) => {
+  const filterHandler = (filter: TransactionFilter) => () => setFilters(filter);
   return (
     <>
       <Margin space="m" />
       <ButtonWrapper>
-        {withFilter && (
+        {!withFilter && (
           <>
-            <Button onPress={() => { setWithFilter(false)}} labelSize="sm" label="Ganados" />
+            <Button
+              onPress={filterHandler('redeemed')}
+              labelSize="sm"
+              label="Ganados"
+            />
             <Margin space="s" />
-            <Button onPress={() => { setWithFilter(false)}} labelSize="sm" label="Canjeados" />
+            <Button
+              onPress={filterHandler('available')}
+              labelSize="sm"
+              label="Canjeados"
+            />
           </>
         )}
-        {!withFilter && (
-          <Button onPress={() => { setWithFilter(true)}} labelSize="l" label="Todos" />
+        {withFilter && (
+          <Button onPress={filterHandler('all')} labelSize="l" label="Todos" />
         )}
       </ButtonWrapper>
     </>
