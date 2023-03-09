@@ -12,8 +12,13 @@
 		13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.mm */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
+		5DF9029D79144BF89237B53C /* Avenir-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2824BD27785C4520B6FA0562 /* Avenir-Black.ttf */; };
 		7699B88040F8A987B510C191 /* libPods-DigitalFemsaChallenge-DigitalFemsaChallengeTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-DigitalFemsaChallenge-DigitalFemsaChallengeTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		985D82A5E0CA43DA83ED51FD /* Avenir-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4029745112E64385897B89B3 /* Avenir-Regular.ttf */; };
+		A127CD5C3E67425CAA87D6F3 /* Avenir-Book.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F202379306084BE0B9090017 /* Avenir-Book.ttf */; };
+		B4AF0074A452447699A772B9 /* Avenir-Heavy.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BE8DA2F654BF438FB2D44066 /* Avenir-Heavy.ttf */; };
+		C13CC1AEC25C4FCE92A6D86F /* Avenir-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B0BA56FF84624FFA8D6B5474 /* Avenir-Light.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,13 +42,18 @@
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = DigitalFemsaChallenge/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = DigitalFemsaChallenge/main.m; sourceTree = "<group>"; };
 		19F6CBCC0A4E27FBF8BF4A61 /* libPods-DigitalFemsaChallenge-DigitalFemsaChallengeTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DigitalFemsaChallenge-DigitalFemsaChallengeTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2824BD27785C4520B6FA0562 /* Avenir-Black.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Avenir-Black.ttf"; path = "../assets/fonts/Avenir-Black.ttf"; sourceTree = "<group>"; };
 		3B4392A12AC88292D35C810B /* Pods-DigitalFemsaChallenge.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DigitalFemsaChallenge.debug.xcconfig"; path = "Target Support Files/Pods-DigitalFemsaChallenge/Pods-DigitalFemsaChallenge.debug.xcconfig"; sourceTree = "<group>"; };
+		4029745112E64385897B89B3 /* Avenir-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Avenir-Regular.ttf"; path = "../assets/fonts/Avenir-Regular.ttf"; sourceTree = "<group>"; };
 		5709B34CF0A7D63546082F79 /* Pods-DigitalFemsaChallenge.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DigitalFemsaChallenge.release.xcconfig"; path = "Target Support Files/Pods-DigitalFemsaChallenge/Pods-DigitalFemsaChallenge.release.xcconfig"; sourceTree = "<group>"; };
 		5B7EB9410499542E8C5724F5 /* Pods-DigitalFemsaChallenge-DigitalFemsaChallengeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DigitalFemsaChallenge-DigitalFemsaChallengeTests.debug.xcconfig"; path = "Target Support Files/Pods-DigitalFemsaChallenge-DigitalFemsaChallengeTests/Pods-DigitalFemsaChallenge-DigitalFemsaChallengeTests.debug.xcconfig"; sourceTree = "<group>"; };
 		5DCACB8F33CDC322A6C60F78 /* libPods-DigitalFemsaChallenge.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DigitalFemsaChallenge.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = DigitalFemsaChallenge/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		89C6BE57DB24E9ADA2F236DE /* Pods-DigitalFemsaChallenge-DigitalFemsaChallengeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DigitalFemsaChallenge-DigitalFemsaChallengeTests.release.xcconfig"; path = "Target Support Files/Pods-DigitalFemsaChallenge-DigitalFemsaChallengeTests/Pods-DigitalFemsaChallenge-DigitalFemsaChallengeTests.release.xcconfig"; sourceTree = "<group>"; };
+		B0BA56FF84624FFA8D6B5474 /* Avenir-Light.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Avenir-Light.ttf"; path = "../assets/fonts/Avenir-Light.ttf"; sourceTree = "<group>"; };
+		BE8DA2F654BF438FB2D44066 /* Avenir-Heavy.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Avenir-Heavy.ttf"; path = "../assets/fonts/Avenir-Heavy.ttf"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		F202379306084BE0B9090017 /* Avenir-Book.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Avenir-Book.ttf"; path = "../assets/fonts/Avenir-Book.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +116,19 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		5359A98B667E47139F837280 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				2824BD27785C4520B6FA0562 /* Avenir-Black.ttf */,
+				F202379306084BE0B9090017 /* Avenir-Book.ttf */,
+				BE8DA2F654BF438FB2D44066 /* Avenir-Heavy.ttf */,
+				B0BA56FF84624FFA8D6B5474 /* Avenir-Light.ttf */,
+				4029745112E64385897B89B3 /* Avenir-Regular.ttf */,
+			);
+			name = Resources;
+			path = "";
+			sourceTree = "<group>";
+		};
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
@@ -122,6 +145,8 @@
 				83CBBA001A601CBA00E9B192 /* Transactions */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				BBD78D7AC51CEA395F1C20DB /* Pods */,
+				5359A98B667E47139F837280 /* Resources */,
+				F251B7F5774D3BD19F23930B /* Products */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -148,6 +173,13 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		F251B7F5774D3BD19F23930B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -168,9 +200,6 @@
 				00E356F51AD99517003FC87E /* PBXTargetDependency */,
 			);
 			name = DigitalFemsaChallengeTests;
-			transactionName = DigitalFemsaChallengeTests;
-			transactionReference = 00E356EE1AD99517003FC87E /* DigitalFemsaChallengeTests.xctest */;
-			transactionType = "com.apple.transaction-type.bundle.unit-test";
 		};
 		13B07F861A680F5B00A75B9A /* DigitalFemsaChallenge */ = {
 			isa = PBXNativeTarget;
@@ -190,9 +219,6 @@
 			dependencies = (
 			);
 			name = DigitalFemsaChallenge;
-			transactionName = DigitalFemsaChallenge;
-			transactionReference = 13B07F961A680F5B00A75B9A /* DigitalFemsaChallenge.app */;
-			transactionType = "com.apple.transaction-type.application";
 		};
 /* End PBXNativeTarget section */
 
@@ -220,7 +246,7 @@
 				Base,
 			);
 			mainGroup = 83CBB9F61A601CBA00E9B192;
-			transactionRefGroup = 83CBBA001A601CBA00E9B192 /* Transactions */;
+			productRefGroup = F251B7F5774D3BD19F23930B /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -244,6 +270,11 @@
 			files = (
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
+				5DF9029D79144BF89237B53C /* Avenir-Black.ttf in Resources */,
+				A127CD5C3E67425CAA87D6F3 /* Avenir-Book.ttf in Resources */,
+				B4AF0074A452447699A772B9 /* Avenir-Heavy.ttf in Resources */,
+				C13CC1AEC25C4FCE92A6D86F /* Avenir-Light.ttf in Resources */,
+				985D82A5E0CA43DA83ED51FD /* Avenir-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

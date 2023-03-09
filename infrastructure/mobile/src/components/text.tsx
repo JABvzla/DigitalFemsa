@@ -28,4 +28,5 @@ export const Text = styled.Text<TextProps>`
   font-weight: ${props => fontWeight[props.weight || 'm']};
   color: ${props => color(props.color || 'black')};
   text-align: ${props => props.align || 'auto'};
+  font-family: Avenir;
 `;
