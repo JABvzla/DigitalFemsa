@@ -19,8 +19,6 @@ interface UseHomeReturns {
 export const useHome = (): UseHomeReturns => {
   const [loading, setLoading] = useState(true);
   const [transactions, setTransactions] = useState<Transaction[]>([]);
-  const [available, setAvailable] = useState<Transaction[]>([]);
-  const [redeemed, setRedeemed] = useState<Transaction[]>([]);
   const [filter, setFilter] = useState<TransactionFilter>('all');
   const [total, setTotal] = useState(0);
 
@@ -28,32 +26,30 @@ export const useHome = (): UseHomeReturns => {
     (async () => {
       setLoading(true);
       const [response] = await getTransactions(transactionService);
-      const [[availableResponse], [redeemedResponse], totalResponse] =
-        await Promise.all([
-          getTransactionsAvailable(transactionService),
-          getTransactionsRedeemed(transactionService),
-          getTransactionsTotal(transactionService),
-        ]);
-
+      const totalResponse = await getTransactionsTotal(transactionService);
       setTransactions(response);
-      setAvailable(availableResponse as Transaction[]);
-      setRedeemed(redeemedResponse as Transaction[]);
       setTotal(totalResponse);
       setLoading(false);
     })();
   }, []);
 
-  const getByFilter = (f: TransactionFilter) =>
-    ({
-      all: transactions,
-      available,
-      redeemed,
-    }[f]);
+  const applyFilter = async (tf: TransactionFilter) => {
+    const MINIMUM_LOADER_SHOWING = 300;
+    setLoading(true);
+    const [transactionApplicationResponse] = await {
+      all: getTransactions,
+      available: getTransactionsAvailable,
+      redeemed: getTransactionsRedeemed,
+    }[tf](transactionService);
+    setTransactions(transactionApplicationResponse);
+    setFilter(tf);
+    setTimeout(() => setLoading(false), MINIMUM_LOADER_SHOWING);
+  };
 
   return {
-    transactions: getByFilter(filter),
+    transactions,
     total,
-    setFilter,
+    setFilter: applyFilter,
     withFilter: filter !== 'all',
     loading,
   };

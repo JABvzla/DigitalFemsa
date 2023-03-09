@@ -10,7 +10,7 @@ import { useHome } from './useHome';
 
 export const Home = () => {
   const { transactions, total, withFilter, setFilter, loading } = useHome();
-  if (loading) {
+  if (loading && !transactions.length) {
     return <Loader />;
   }
   return (
@@ -30,9 +30,13 @@ export const Home = () => {
         <Margin space="m" />
         <SectionTitle>TUS MOVIMIENTOS</SectionTitle>
         <Margin space="m" />
-        <TransactionList transactions={transactions} />
+        <TransactionList transactions={transactions} loading={loading} />
         <Margin space="m" />
-        <BottomFilters setFilters={setFilter} withFilter={withFilter} />
+        <BottomFilters
+          setFilters={setFilter}
+          withFilter={withFilter}
+          loading={loading}
+        />
       </Layout>
     </>
   );

@@ -2,13 +2,16 @@ import React from 'react';
 import { Button, Margin } from '../../../components';
 import { TransactionFilter } from '../useHome';
 import { ButtonWrapper } from './styled';
+import { detached } from '../../../helpers/detached';
 
 interface Props {
   setFilters: (filter: TransactionFilter) => void;
   withFilter: boolean;
+  loading: boolean;
 }
-export const BottomFilters = ({ setFilters, withFilter }: Props) => {
-  const filterHandler = (filter: TransactionFilter) => () => setFilters(filter);
+export const BottomFilters = ({ setFilters, withFilter, loading }: Props) => {
+  const filterHandler = (filter: TransactionFilter) => () =>
+    !loading && detached(() => setFilters(filter));
   return (
     <>
       <Margin space="m" />
