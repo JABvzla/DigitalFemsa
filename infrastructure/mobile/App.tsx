@@ -1,32 +1,26 @@
-import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import React from 'react';
+import { createSharedElementStackNavigator } from 'react-navigation-shared-element';
+import { forFade } from './src/navigation-transition';
 import * as Screen from './src/screens';
-import { Transaction } from 'root/domain/transaction';
 
-const Stack = createNativeStackNavigator();
+const Stack = createSharedElementStackNavigator();
 
 const App = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator
         initialRouteName="Home"
-        screenOptions={{ headerShown: false }}>
+        screenOptions={{ headerShown: false, cardStyleInterpolator: forFade }}>
         <Stack.Screen name="Home" component={Screen.Home} />
-        <Stack.Screen name="Details" component={Screen.TransactionDetail} />
+        <Stack.Screen
+          name="Details"
+          component={Screen.TransactionDetail}
+          sharedElements={route => [`image.${route.params.transaction.id}`]}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );
 };
-
-type RootStackParams = {
-  Home: undefined;
-  Details: { transaction: Transaction };
-};
-
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-namespace ReactNavigation {
-  interface RootParamList extends RootStackParams {}
-}
 
 export default App;

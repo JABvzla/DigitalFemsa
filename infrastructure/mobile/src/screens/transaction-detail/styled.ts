@@ -22,7 +22,6 @@ export const ShadowCard = styled(Card).attrs({
   backround: 'white',
   radius: 'xl',
 })`
-  background-color: ${color('white200')};
   overflow: visible;
   height: 250px;
   width: 100%;

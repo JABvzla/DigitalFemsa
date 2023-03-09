@@ -1,7 +1,9 @@
 import { useNavigation } from '@react-navigation/native';
 import React, { useCallback } from 'react';
 import { View } from 'react-native';
+import { SharedElement } from 'react-navigation-shared-element';
 import { Transaction } from 'root/domain/transaction';
+import { Margin } from '../../../components';
 import {
   TransactionContent,
   TransactionCreated,
@@ -11,12 +13,12 @@ import {
   TransactionPoint,
 } from './styled';
 
+const AnimatedImage = { borderRadius: 10 };
 interface TransactionItemProps {
   transaction: Transaction;
 }
-
 export const TransactionItem = ({ transaction }: TransactionItemProps) => {
-  const { product, createdAt, isRedeemed, points, image } = transaction;
+  const { id, product, createdAt, isRedeemed, points, image } = transaction;
   const navigation = useNavigation();
   const onPressHandler = useCallback(() => {
     navigation.navigate('Details', { transaction });
@@ -24,8 +26,13 @@ export const TransactionItem = ({ transaction }: TransactionItemProps) => {
 
   return (
     <TransactionContent onPress={onPressHandler}>
-      <TransactionImage source={{ uri: image }} />
+      <SharedElement id={`image.${id}`}>
+        <View style={AnimatedImage}>
+          <TransactionImage source={{ uri: image }} resizeMode="stretch" />
+        </View>
+      </SharedElement>
       <View>
+        <Margin space="s" />
         <TransactionName>{product}</TransactionName>
         <TransactionCreated>{createdAt}</TransactionCreated>
       </View>
@@ -33,7 +40,9 @@ export const TransactionItem = ({ transaction }: TransactionItemProps) => {
         <TransactionOperation isPlus={isRedeemed}>
           {isRedeemed ? '+' : '-'}{' '}
         </TransactionOperation>
-        {points.toLocaleString()} {'>'}
+        <TransactionPoint>
+          {points.toLocaleString()} {'>'}
+        </TransactionPoint>
       </TransactionPoint>
     </TransactionContent>
   );
