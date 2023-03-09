@@ -25,6 +25,11 @@ export const TransactionImage = styled.Image`
   margin-right: ${space('s')};
 `;
 
+export const DescriptionContent = styled.View`
+  flex: 1;
+  padding-right: ${space('s')};
+`;
+
 export const TransactionContent = styled.TouchableOpacity`
   flex-direction: row;
   align-items: center;
@@ -33,6 +38,8 @@ export const TransactionContent = styled.TouchableOpacity`
 export const TransactionName = styled(Text).attrs({
   size: 'm',
   weight: 'l',
+  ellipsizeMode: 'tail',
+  numberOfLines: 1,
 })``;
 
 export const TransactionCreated = styled(Text).attrs({
@@ -40,11 +47,22 @@ export const TransactionCreated = styled(Text).attrs({
   weight: 'm',
 })``;
 
+export const PointContent = styled.View`
+  flex-direction: row;
+  align-items: center;
+  margin-left: auto;
+`;
 export const TransactionPoint = styled(Text).attrs({
   size: 'l',
   weight: 'l',
+})``;
+
+export const ArrowIcon = styled(TransactionPoint).attrs({
+  size: 'xl',
+  weight: 'l',
+  children: '>',
 })`
-  margin-left: auto;
+  margin-left: ${space('s')};
 `;
 
 export const TransactionOperation = styled.Text<{ isPlus: boolean }>`

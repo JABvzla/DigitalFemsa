@@ -5,6 +5,9 @@ import { SharedElement } from 'react-navigation-shared-element';
 import { Transaction } from 'root/domain/transaction';
 import { Margin } from '../../../components';
 import {
+  ArrowIcon,
+  DescriptionContent,
+  PointContent,
   TransactionContent,
   TransactionCreated,
   TransactionImage,
@@ -31,19 +34,18 @@ export const TransactionItem = ({ transaction }: TransactionItemProps) => {
           <TransactionImage source={{ uri: image }} resizeMode="stretch" />
         </View>
       </SharedElement>
-      <View>
+      <DescriptionContent>
         <Margin space="s" />
         <TransactionName>{product}</TransactionName>
         <TransactionCreated>{createdAt}</TransactionCreated>
-      </View>
-      <TransactionPoint>
+      </DescriptionContent>
+      <PointContent>
         <TransactionOperation isPlus={isRedeemed}>
           {isRedeemed ? '+' : '-'}{' '}
         </TransactionOperation>
-        <TransactionPoint>
-          {points.toLocaleString()} {'>'}
-        </TransactionPoint>
-      </TransactionPoint>
+        <TransactionPoint>{points.toLocaleString()}</TransactionPoint>
+        <ArrowIcon />
+      </PointContent>
     </TransactionContent>
   );
 };
