@@ -1,6 +1,6 @@
 import React from 'react';
 import { StatusBar } from 'react-native';
-import { Layout, Margin, Text } from '../../components';
+import { Layout, Loader, Margin, Text } from '../../components';
 import { color } from '../../styles';
 import { BottomFilters } from './bottom-filters';
 import { CardTotal } from './card-total';
@@ -9,7 +9,10 @@ import { TransactionList } from './transaction-list';
 import { useHome } from './useHome';
 
 export const Home = () => {
-  const { transactions, total, withFilter, setFilter } = useHome();
+  const { transactions, total, withFilter, setFilter, loading } = useHome();
+  if (loading) {
+    return <Loader />;
+  }
   return (
     <>
       <StatusBar backgroundColor={color('white100')} barStyle="dark-content" />

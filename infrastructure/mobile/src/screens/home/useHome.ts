@@ -14,8 +14,10 @@ interface UseHomeReturns {
   total: number;
   setFilter: (filter: TransactionFilter) => void;
   withFilter: boolean;
+  loading: boolean;
 }
 export const useHome = (): UseHomeReturns => {
+  const [loading, setLoading] = useState(true);
   const [transactions, setTransactions] = useState<Transaction[]>([]);
   const [available, setAvailable] = useState<Transaction[]>([]);
   const [redeemed, setRedeemed] = useState<Transaction[]>([]);
@@ -24,6 +26,7 @@ export const useHome = (): UseHomeReturns => {
 
   React.useEffect(() => {
     (async () => {
+      setLoading(true);
       const [response] = await getTransactions(transactionService);
       const [[availableResponse], [redeemedResponse], totalResponse] =
         await Promise.all([
@@ -36,6 +39,7 @@ export const useHome = (): UseHomeReturns => {
       setAvailable(availableResponse as Transaction[]);
       setRedeemed(redeemedResponse as Transaction[]);
       setTotal(totalResponse);
+      setLoading(false);
     })();
   }, []);
 
@@ -51,5 +55,6 @@ export const useHome = (): UseHomeReturns => {
     total,
     setFilter,
     withFilter: filter !== 'all',
+    loading,
   };
 };
