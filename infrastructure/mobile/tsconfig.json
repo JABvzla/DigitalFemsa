@@ -8,6 +8,9 @@
     "skipLibCheck": true,                                 /* Skip type checking all .d.ts files. */
     "types":  [
       "@types/styled-components-react-native"
-    ]
+    ],
+    "paths": {
+      "root/*": ["../../*"]
+    }
   }
 }

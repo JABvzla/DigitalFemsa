@@ -1,15 +1,7 @@
 const path = require('path');
-
-const watchFolders = [
-  path.resolve(`${__dirname}/../../infrastructure`),
-  path.resolve(`${__dirname}/../../application`),
-  path.resolve(`${__dirname}/../../domain`),
-];
-
+const watchFolders = [path.resolve(`${__dirname}/../../`)];
 const extraNodeModules = {
-  infrastructure: path.resolve(`${__dirname}/../../infrastructure`),
-  application: path.resolve(`${__dirname}/../../application`),
-  domain: path.resolve(`${__dirname}/../../domain`),
+  root: path.resolve(`${__dirname}/../../`),
 };
 
 module.exports = {
@@ -25,4 +17,5 @@ module.exports = {
     extraNodeModules,
   },
   watchFolders,
+  projectRoot: path.resolve(__dirname),
 };
