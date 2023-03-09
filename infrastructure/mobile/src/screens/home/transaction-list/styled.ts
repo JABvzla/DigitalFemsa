@@ -17,7 +17,7 @@ export const FlatList = styled.FlatList.attrs({
   padding: ${space('m')};
 ` as unknown as typeof RNFlatlist;
 
-export const TransactionImage = styled.View`
+export const TransactionImage = styled.Image`
   ${radius('m')};
   background-color: #ccc;
   width: 45px;

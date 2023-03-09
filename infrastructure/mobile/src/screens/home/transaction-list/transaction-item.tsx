@@ -15,10 +15,10 @@ interface TransactionItemProps {
 }
 
 export const TransactionItem = ({
-  transaction: { product, createdAt, isRedeemed, points },
+  transaction: { product, createdAt, isRedeemed, points, image },
 }: TransactionItemProps) => (
   <TransactionContent>
-    <TransactionImage />
+    <TransactionImage source={{ uri: image }} />
     <View>
       <TransactionName>{product}</TransactionName>
       <TransactionCreated>{createdAt}</TransactionCreated>
