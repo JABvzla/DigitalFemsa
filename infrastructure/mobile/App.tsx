@@ -1,5 +1,6 @@
 import { NavigationContainer } from '@react-navigation/native';
 import React from 'react';
+import { Platform } from 'react-native';
 import { createSharedElementStackNavigator } from 'react-navigation-shared-element';
 import { forFade } from './src/navigation-transition';
 import * as Screen from './src/screens';
@@ -16,7 +17,11 @@ const App = () => {
         <Stack.Screen
           name="Details"
           component={Screen.TransactionDetail}
-          sharedElements={route => [`image.${route.params.transaction.id}`]}
+          sharedElements={route =>
+            Platform.OS === 'android'
+              ? [`image.${route.params.transaction.id}`]
+              : []
+          }
         />
       </Stack.Navigator>
     </NavigationContainer>

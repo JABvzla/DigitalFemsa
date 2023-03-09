@@ -28,7 +28,7 @@ export const transactionService: TransactionRepository = {
       return [[], "Error using TransactionService"]
     }
     const data: FetchTransactionsResponse = await response.json()
-    const transactions = data.map(mapperResponseToTransaction)
+    const transactions = await Promise.all(data.map(mapperResponseToTransaction))
     cache.transactions = transactions
     return [transactions, null]
   },
