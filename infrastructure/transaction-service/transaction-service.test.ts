@@ -1,11 +1,11 @@
-import fetchTransactions from "./transaction-service"
+import {transactionService} from "./transaction-service"
 import fetchMock from "jest-fetch-mock"
 
 describe("transaction-service", () => {
   it("should respond correctly", async () => {
     // Arrange
     // Action
-    const [result, errorResult] = await fetchTransactions()
+    const [result, errorResult] = await transactionService.getAll()
     // Asserts
     expect(errorResult).toBeNull()
     expect(result.length).not.toBe(0)
@@ -15,9 +15,9 @@ describe("transaction-service", () => {
     fetchMock.enableMocks()
     fetchMock.mockReject()
     // Action
-    const [result, errorResult] = await fetchTransactions()
+    const [result, errorResult] = await transactionService.getAll()
     // Asserts
-    expect(errorResult).toBe("Error using FetchTransactionSesrvice")
+    expect(errorResult).toBe("Error using TransactionService")
     expect(result).toEqual([])
   })
 })
